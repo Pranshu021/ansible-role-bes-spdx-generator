@@ -1,0 +1,6 @@
+---
+
+- name: Removing spdx-generator
+  file:
+    path: /opt/spdx-sbom-generator
+    state: absent

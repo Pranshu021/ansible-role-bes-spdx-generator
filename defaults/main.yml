@@ -1,5 +1,5 @@
 ---
 # defaults file for spdx-generator
 
-- release_link: https://github.com/opensbom-generator/spdx-sbom-generator/releases/download/v0.0.15
-- latest_version: spdx-sbom-generator-v0.0.15-linux-amd64.tar.gz
+release_link: https://github.com/opensbom-generator/spdx-sbom-generator/releases/download/v0.0.15
+latest_version: spdx-sbom-generator-v0.0.15-linux-amd64.tar.gz

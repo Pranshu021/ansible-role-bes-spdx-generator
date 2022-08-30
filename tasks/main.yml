@@ -1,13 +1,13 @@
 ---
 # tasks file for spdx-generator
-- include: "tasks/oah-install.yml"
+- include: "tasks/oah_install.yml"
   when: oah_command == "install"
 
-- include: "tasks/oah-uninstall.yml"
-  when: oah_command == "uninstall"
+# - include: "tasks/oah_uninstall.yml"
+#   when: oah_command == "uninstall"
 
-- include: "tasks/oah-validate.yml"
-  when: oah_command == "validate"
+# - include: "tasks/oah_validate.yml"
+#   when: oah_command == "validate"
 
-- include: "tasks/oah-update.yml"
-  when: oah_command == "update"
+# - include: "tasks/oah_update.yml"
+#   when: oah_command == "update"

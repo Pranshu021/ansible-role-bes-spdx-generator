@@ -1,0 +1,16 @@
+---
+- name: Checking latest version
+  shell: curl -s https://api.github.com/repos/opensbom-generator/spdx-sbom-generator/releases/latest | grep "browser_download_url.*linux-amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | head -1
+  register: update_link
+
+- name: Checking if latest version is installed
+  debug:
+    msg: "Latest version already installed"
+  when: update_link.stdout == "{{ release_link }}/{{ latest_version }}"
+
+- name: Updating to latest version
+  unarchive:
+    src: update_link
+    dest: /opt/
+    remote_src: yes
+  
