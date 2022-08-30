@@ -1,8 +1,12 @@
 ---
 
+- name: Checking the latest version
+  shell: 'curl -s https://api.github.com/repos/opensbom-generator/spdx-sbom-generator/releases/latest | grep "browser_download_url.*linux-amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | head -1 | xargs'
+  register: latest_version
+  warn: false
+
 - name: Download and Extract spdx-generator tool
   unarchive:
-    # src: https://github.com/opensbom-generator/spdx-sbom-generator/releases/download/v0.0.15/spdx-sbom-generator-v0.0.15-linux-amd64.tar.gz
-    src: "{{ release_link }}/{{ latest_version }}"
+    src: "{{ latest_version.stdout }}"
     dest: /opt/
     remote_src: yes
